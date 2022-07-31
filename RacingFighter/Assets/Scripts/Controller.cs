@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour {
     private float SA;
 
     [SerializeField] FixedJoystick _joystick;
-
+    [SerializeField] private Plane plane;
     [SerializeField] private Vector3 com;
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -33,7 +33,7 @@ public class Controller : MonoBehaviour {
     [SerializeField] private WheelCollider WheelBLcollider;
     [SerializeField] private WheelCollider WheelBRcollider;
     [SerializeField] private Rigidbody rb;
-
+    
    private void Start()
     {
         rb.centerOfMass = com;
@@ -46,7 +46,7 @@ public class Controller : MonoBehaviour {
         HandleMotor();
         HandleSteering();
         UpdateWheel();
-        if (transform.position.y > 1.0f)
+        if (plane.GetDistanceToPoint(transform.position) > 1.0f)
         {
             transform.position = new Vector3(transform.position.x, 1.0f, transform.position.z);
             var rb = transform.GetComponent<Rigidbody>().velocity;
