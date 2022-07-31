@@ -1,0 +1,4 @@
+repository "RacingFighter@Seakl@cloud"
+  path "/"
+    br "/main"
+    co "/main"
