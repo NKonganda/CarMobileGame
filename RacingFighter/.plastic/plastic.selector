@@ -1,4 +1,4 @@
-repository "RacingFighter@Seakl@cloud"
+repository "My project@Seakl@cloud"
   path "/"
     br "/main"
     co "/main"
